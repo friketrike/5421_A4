@@ -3,6 +3,7 @@
 #define RHOMBUS
 
 #include <iostream>
+#include <cmath>
 #include "Shape.h"
 
 class Rhombus : public Shape {
@@ -12,13 +13,13 @@ class Rhombus : public Shape {
         : Shape(dname, "Rhombus")
         , d(d|1) 
     { }
-    virtual void scale(int n){}
-    virtual double geometricArea() const{}
-    virtual double geometricPerimeter() const{}
-    virtual int screenArea() const{}
-    virtual int screenPerimeter() const{}
-    virtual void getBoundingDimensions(int& w, int& h) const{w = d; h = d;}
-    virtual void draw(int c, int r, Canvas& canvas, char ch = '*') const {} 
+    virtual void scale(const int& n);
+    virtual double geoArea() const;
+    virtual double geoPerimeter() const;
+    virtual int scrArea() const;
+    virtual int scrPerimeter() const;
+    virtual void getBoundingDimensions(int& w, int& h) const;
+    virtual void draw(int c, int r, Canvas& canvas, char ch = '*') const; 
 };
 
 #endif

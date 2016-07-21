@@ -14,12 +14,12 @@ class Rectangle : public Shape {
         , h(h)
     {}
     virtual void scale(const int& n);
-    virtual double geometricArea() const;
-    virtual double geometricPerimeter() const;
-    virtual int screenArea() const;
-    virtual int screenPerimeter() const;
+    virtual double geoArea() const;
+    virtual double geoPerimeter() const;
+    virtual int scrArea() const;
+    virtual int scrPerimeter() const;
     virtual void getBoundingDimensions(int& w, int& h) const;
-    virtual void draw(int c, int r, Canvas& canvas, char ch = '*') const {}
+    virtual void draw(int c, int r, Canvas& canvas, char ch = '*') const;
 };
 
 #endif
