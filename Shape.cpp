@@ -2,7 +2,7 @@
 #include "Shape.h"
 
 // Useful constant for computing values accross several shapes
-int Shape::SQRT2 = std::sqrt(2);
+const int Shape::SQRT2 = std::sqrt(2);
 int Shape::objectCounter = 0;
 void Shape::change_d_name(const std::string& newName){
     dname = newName;

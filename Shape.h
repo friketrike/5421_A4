@@ -13,11 +13,11 @@ class Shape {
 
   // public or private? decide according to usage  
   public:  
-    static const SQRT2;
+    static const int SQRT2;
     static int objectCounter;
     int uid;
     std::string dname, gname;
-    Shape(std::string dname, std::string gname) 
+    Shape(const std::string& dname, const std::string& gname) 
         : uid(++Shape::objectCounter)
         , dname(dname)
         , gname(gname)

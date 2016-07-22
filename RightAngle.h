@@ -1,16 +1,15 @@
 
-#ifndef ISOSCELES
-#define ISOSCELES
+#ifndef RIGHTANGLE
+#define RIGHTANGLE
 
 #include <iostream>
-#include <cmath>
 #include "Shape.h"
 #include "Triangle.h"
 
-class IsoTriangle : public Triangle {
+class RightAngle : public Triangle {
   public:
-    IsoTriangle(const int& h, std::string dname)
-        : Triangle((2*h)-1, h, dname, "Isosceles")
+    RightAngle(const int& h, const std::string& dname)
+        : Triangle(h, h, dname, "Right Angle")
     {}
     virtual void scale(const int& n);
     virtual double geoPerimeter() const;
