@@ -1,8 +1,9 @@
 
 #ifndef ISOSCELES
-#define ISOCSCELES
+#define ISOSCELES
 
 #include <iostream>
+#include <cmath>
 #include "Shape.h"
 
 class IsoTriangle : public Triangle {

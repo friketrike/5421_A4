@@ -18,7 +18,10 @@ class Triangle : public Shape {
     virtual double geometricPerimeter() const =0;
     virtual int screenArea() const =0;
     virtual int screenPerimeter() const =0;
-    virtual void getBoundingDimensions(int& w, int& h) const =0;
+    virtual void getBoundingDimensions(int& w, int& h) const { 
+        w = this->b; 
+        h = this->h;
+    }
     virtual void draw(int c, int r, Canvas& canvas, char ch = '*') const =0;
 };
 

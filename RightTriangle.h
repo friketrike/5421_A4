@@ -1,14 +1,14 @@
 
-#ifndef RIGHTTRIANGLE
-#define RIGHTTRIANGLE
+#ifndef RIGHTANGLE
+#define RIGHTANGLE
 
 #include <iostream>
 #include "Shape.h"
 
-class RightTriangle : public Triangle{
+class RightAngle : public Triangle{
   public:
-    RightTriangle(int h, std::string dname)
-        : Triangle(h, h, dname, "Right Isosceles")
+    RightAngle(int h, std::string dname)
+        : Triangle(h, h, dname, "Right Angle")
     {}
     virtual void scale(int n);
     virtual double geometricPerimeter() const;

@@ -3,7 +3,6 @@
 #define RHOMBUS
 
 #include <iostream>
-#include <cmath>
 #include "Shape.h"
 
 class Rhombus : public Shape {

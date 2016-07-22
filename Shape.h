@@ -2,6 +2,7 @@
 #ifndef SHAPE
 #define SHAPE
 
+#include <cmath>
 #include <iomanip>
 #include <sstream>
 #include <string>
@@ -12,6 +13,7 @@ class Shape {
 
   // public or private? decide according to usage  
   public:  
+    static const SQRT2;
     static int objectCounter;
     int uid;
     std::string dname, gname;

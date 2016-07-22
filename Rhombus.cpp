@@ -9,7 +9,7 @@ double Rhombus::geoArea() const {
 }
 
 double Rhombus::geoPerimeter() const {
-    return (2.0*(std::sqrt(2.0)))*d;
+    return (2.0*(Shape::SQRT2))*d;
 }
 
 int Rhombus::scrArea() const {
