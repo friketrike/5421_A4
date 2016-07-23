@@ -9,7 +9,7 @@ void RightAngle::scale(const int& n) {
 }
 
 double RightAngle::geoPerimeter() const {
-    return (2 + Shape::SQRT2) * h;
+    return ((2.0 + Shape::SQRT2) * h);
 }
 
 int RightAngle::scrArea() const {
@@ -17,7 +17,7 @@ int RightAngle::scrArea() const {
 }
 
 int RightAngle::scrPerimeter() const{ 
-    return (4 * (h - 1));
+    return (3 * (h - 1));
 }
 
 void RightAngle::getBoundingDimensions(int& w, int& h) const {

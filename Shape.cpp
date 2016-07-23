@@ -2,7 +2,7 @@
 #include "Shape.h"
 
 // Useful constant for computing values accross several shapes
-const int Shape::SQRT2 = std::sqrt(2);
+const double Shape::SQRT2 = std::sqrt(2.0);
 int Shape::objectCounter = 0;
 void Shape::change_d_name(const std::string& newName){
     dname = newName;
@@ -28,3 +28,9 @@ std::string Shape::toString() const {
     info << "Geo Perimeter:  " << geoPerimeter() << std::endl;
     return info.str();
 }
+
+std::ostream& operator<<(std::ostream& ostr, const Shape& shape) {
+    ostr << shape.toString();
+    return ostr;
+}
+

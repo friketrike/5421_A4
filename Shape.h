@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <iomanip>
+#include <iostream>
 #include <sstream>
 #include <string>
 #include <typeinfo>
@@ -13,7 +14,7 @@ class Shape {
 
   // public or private? decide according to usage  
   public:  
-    static const int SQRT2;
+    static const double SQRT2;
     static int objectCounter;
     int uid;
     std::string dname, gname;
@@ -21,10 +22,13 @@ class Shape {
         : uid(++Shape::objectCounter)
         , dname(dname)
         , gname(gname)
-    {++(Shape::objectCounter);}
-    void change_d_name(const std::string& newName);
+    {}
+    virtual ~Shape()=default;
 
+    void change_d_name(const std::string& newName);
     std::string toString() const;
+
+    friend std::ostream& operator<<(std::ostream& ostr, const Shape& shape); 
 
     // Derived classes must implement this
     virtual void scale(const int& n)=0;
