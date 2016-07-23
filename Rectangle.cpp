@@ -29,6 +29,10 @@ void Rectangle::getBoundingDimensions(int& w, int& h) const {
 }
 
 void Rectangle::draw(int c, int r, Canvas& canvas, char ch) const {
-    // TODO
+    for (int m = 0; m < h; ++m) {
+        for (int n = 0; n < w; ++n) {
+            canvas.putChar(c + n, r + m, ch);
+        }
+    } 
 } 
 

@@ -26,6 +26,10 @@ void RightAngle::getBoundingDimensions(int& w, int& h) const {
 }
 
 void RightAngle::draw(int c, int r, Canvas& canvas, char ch) const {
-    // TODO
+    for (int m = 0; m < h; ++m) {
+        for (int n = 0; n <= m; ++n) {
+            canvas.putChar(c + n, r + m, ch);
+        }
+    } 
 } 
 

@@ -27,6 +27,13 @@ void Rhombus::getBoundingDimensions(int& w, int& h) const {
 }
 
 void Rhombus::draw(int c, int r, Canvas& canvas, char ch) const {
-    // TODO
+    const int offset = d/2;
+    for (int m = 0; m < d; ++m) {
+        for (int n = 0; n < d; ++n) {
+            if ((std::abs(m - offset) + std::abs(n - offset)) <= offset) {
+                canvas.putChar(c + n, r + m, ch);
+            }
+        }
+    } 
 } 
 
