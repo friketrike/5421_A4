@@ -1,4 +1,12 @@
 
+/*
+ * Assignennt 4, COMP 5421, summer 2016  
+ * Federico O'Reilly Regueiro 40012304
+ * Concordia University
+ * 
+ * Canvas base-clas header file file
+ */
+
 #ifndef CANVAS
 #define CANVAS
 
@@ -11,8 +19,11 @@ class Canvas {
   protected:
     int n, m;
     vector<vector<char>> grid;
-    const static char BLANK;
-  
+    const static char BLANK; 
+    const static char H_MARGIN;
+    const static char V_MARGIN;
+    const static char CORNER;
+
     // pre-condition, caller has validated position (r, c) to be in the grid
     vector<char>::iterator getIteratorRC (const int& r, const int& c);
 
@@ -31,7 +42,7 @@ class Canvas {
     virtual void clear(const char& ch) =0;
     virtual void putChar(const int& c, const int& r, const char& ch) =0;
     virtual char getChar(const int& c, const int& r) =0;
-    void decorate() {}
+    virtual void decorate() =0;
     virtual bool validatePos(const int& c, const int& r) =0;
 };
 

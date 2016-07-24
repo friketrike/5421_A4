@@ -1,32 +1,21 @@
 
+/*
+ * Assignennt 4, COMP 5421, summer 2016  
+ * Federico O'Reilly Regueiro 40012304
+ * Concordia University
+ * 
+ * Bordered Canvas implementation file
+ */
+
 #include "BorderedCanvas.h"
 
 void BorderedCanvas::clear(const char& ch) {
-    auto itM = grid.begin();
-    auto itN = itM->begin();
-    // insert a top margin
-    *itN++ = '+';
-    for (; itN != (itM->end() - 1); ++itN) {
-        *itN = '-';
-    }
-    *itN = '+';
-    ++itM;
-    // now fill with 'ch' flanked with '|'
-    for (;itM != (grid.end() - 1); ++itM) {
-        auto itN = itM->begin();
-        *itN++ = '|';
-        for (;itN != (itM->end() - 1); ++itN) {
+    for (auto itM = grid.begin(); itM != grid.end(); ++itM) {
+        for (auto itN = itM->begin(); itN != itM->end(); ++itN) {
             *itN = ch;
         }
-        *itN = '|';
     }
-    // then insert the bottom part of the frame
-    itN = itM->begin();
-    *itN++ = '+';
-    for (; itN != (itM->end() - 1); ++itN) {
-        *itN = '-';
-    }
-    *itN = '+';
+    decorate();
 }
 
 void BorderedCanvas::putChar(const int& c, 
@@ -50,6 +39,24 @@ char BorderedCanvas::getChar(const int& c, const int& r) {
     }
     auto itRC = getIteratorRC(c + 1, r + 1);
     return *itRC;
+}
+
+void BorderedCanvas::decorate() { 
+    // decorate the corners
+    *(grid.begin()->begin()) = Canvas::CORNER;
+    *(grid.begin()->end()-1) = Canvas::CORNER;
+    *((grid.end()-1)->begin()) = Canvas::CORNER;
+    *((grid.end()-1)->end()-1) = Canvas::CORNER;
+    // now the horizontal margins
+    for (int i = 1; i < (n - 1); ++i) {
+        *(grid.begin()->begin() + i) = Canvas::H_MARGIN;
+        *((grid.end()-1)->begin() + i) = Canvas::H_MARGIN;
+    }
+    // finally, the vertical margins
+    for (int i = 1; i < (m - 1); ++i) {
+        *(grid.begin()+i)->begin() =  Canvas::V_MARGIN;
+        *((grid.begin()+i)->end()-1) =  Canvas::V_MARGIN;
+    }
 }
 
 bool BorderedCanvas::validatePos(const int& c, const int& r) {

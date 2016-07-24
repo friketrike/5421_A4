@@ -1,4 +1,12 @@
 
+/*
+ * Assignennt 4, COMP 5421, summer 2016  
+ * Federico O'Reilly Regueiro 40012304
+ * Concordia University
+ * 
+ * Shape implementation file
+ */
+
 #include "Shape.h"
 
 // Useful constant for computing values accross several shapes

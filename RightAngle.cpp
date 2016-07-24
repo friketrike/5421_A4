@@ -1,4 +1,12 @@
 
+/*
+ * Assignennt 4, COMP 5421, summer 2016  
+ * Federico O'Reilly Regueiro 40012304
+ * Concordia University
+ * 
+ * Right-Angle triangle implementation file
+ */
+
 #include "RightAngle.h"
 
 void RightAngle::scale(const int& n) { 

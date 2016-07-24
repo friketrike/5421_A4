@@ -1,4 +1,12 @@
 
+/*
+ * Assignennt 4, COMP 5421, summer 2016  
+ * Federico O'Reilly Regueiro 40012304
+ * Concordia University
+ * 
+ * Triangle base-class header file
+ */
+
 #ifndef TRIANGLE
 #define TRIANGLE
 
@@ -13,6 +21,7 @@ class Triangle : public Shape {
         , b(b)
         , h(h)
     {}
+    virtual ~Triangle()=default;
     virtual void scale(const int& n) =0;
     virtual double geoArea() const {return double(h*b)/2;}
     virtual double geoPerimeter() const =0;

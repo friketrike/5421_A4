@@ -1,9 +1,29 @@
+
+/*
+ * Assignennt 4, COMP 5421, summer 2016  
+ * Federico O'Reilly Regueiro 40012304
+ * Concordia University
+ * 
+ * drawhouse driver file
+ */
+
+#include "Shape.h"
+#include "Rectangle.h"
+#include "Rhombus.h"
+#include "Triangle.h"
+#include "Isosceles.h"
+#include "RightAngle.h"
+#include "Canvas.h"
+#include "BorderedCanvas.h"
+#include "TitledCanvas.h"
+
+
 // Uses different shapes to draw a textual image that looks line a house
 void drawHouse()
 {
    // draw a house front view on a 44-column and 50-row titles canvas
    TitledCanvas canvas(44, 50, "A Geometric House: Front View");
-
+   
    Rectangle chimney(2, 14, "Chimeny on the roof"); // A vertical 14 x 2 chimney
    chimney.draw(4, 7, canvas, 'H'); // Draw chimney on canvas
 
@@ -88,3 +108,8 @@ void drawHouse()
    cout << StairSlash << endl;
    cout << rightAngle << endl;
 }
+
+int main () {
+    drawHouse();
+}
+
